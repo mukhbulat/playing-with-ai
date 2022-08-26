@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Controllers
+namespace Units.Controllers
 {
     public interface IMovable
     {

@@ -1,7 +1,7 @@
-using Controllers;
+using Units.Controllers;
 using UnityEngine;
 
-namespace Behaviours
+namespace Units.Behaviours
 {
     [RequireComponent(typeof(CircleCollider2D))]
     public class MovementBehaviour : MonoBehaviour, IMovable

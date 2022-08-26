@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Controllers
+namespace Units.Controllers
 {
     public interface IDamageable
     {

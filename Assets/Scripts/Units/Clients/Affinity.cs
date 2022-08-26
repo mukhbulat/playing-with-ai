@@ -1,4 +1,4 @@
-﻿namespace Clients
+﻿namespace Units.Clients
 {
     public enum Affinity
     {

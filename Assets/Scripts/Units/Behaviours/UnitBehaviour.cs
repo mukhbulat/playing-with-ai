@@ -1,9 +1,8 @@
-﻿using System;
-using Clients;
-using Controllers;
+﻿using Units.Clients;
+using Units.Controllers;
 using UnityEngine;
 
-namespace Behaviours
+namespace Units.Behaviours
 {
     public class UnitBehaviour : MonoBehaviour, IUnit
     {

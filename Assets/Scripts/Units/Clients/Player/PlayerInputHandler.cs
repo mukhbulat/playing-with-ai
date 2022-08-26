@@ -1,8 +1,8 @@
-﻿using Behaviours;
+﻿using Units.Behaviours;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Clients.Player
+namespace Units.Clients.Player
 {
     [RequireComponent(typeof(PlayerInput))]
     public class PlayerInputHandler : MonoBehaviour
