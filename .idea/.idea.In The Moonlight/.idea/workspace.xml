@@ -2,34 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="Moved everything, related to Units to Units folder and adjusted namespaces. Added blank SingleUnitHandler.">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SingleUnitHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SingleUnitHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/TestGrid.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/TestGrid.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Data.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/GridData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/GridData.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/MovementBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/MovementBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/MovementBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/MovementBehaviour.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/UnitBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/UnitBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/UnitBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/UnitBehaviour.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Clients.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Clients/Affinity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Affinity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Clients/Affinity.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Affinity.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Clients/Director.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Clients/Director/UnitsOnScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/UnitsOnScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Clients/Director/UnitsOnScene.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/UnitsOnScene.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Clients/Player.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Player.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Clients/Player/PlayerInputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Player/PlayerInputHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Clients/Player/PlayerInputHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Player/PlayerInputHandler.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Damageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/Damageable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Damageable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/Damageable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/IDamageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/IDamageable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/IDamageable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/IDamageable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/IMovable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/IMovable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/IMovable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/IMovable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/IUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/IUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/IUnit.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/IUnit.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1661431912940</updated>
       <workItem from="1661432075616" duration="6292000" />
-      <workItem from="1661516420356" duration="7212000" />
+      <workItem from="1661516420356" duration="10596000" />
     </task>
     <task id="LOCAL-00001" summary="Added IMovable interface and UnitBehaviour. Changed PlayerInputHandler and MovementBehaviour to implement IMovable.">
       <created>1661522578019</created>
@@ -106,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661526857215</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Moved everything, related to Units to Units folder and adjusted namespaces. Added blank SingleUnitHandler.">
+      <created>1661530408056</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1661530408056</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
