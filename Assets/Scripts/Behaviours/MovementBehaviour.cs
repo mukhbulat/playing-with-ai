@@ -1,10 +1,10 @@
-using System.Collections.Generic;
+using Controllers;
 using UnityEngine;
 
 namespace Behaviours
 {
     [RequireComponent(typeof(CircleCollider2D))]
-    public class MovementBehaviour : MonoBehaviour
+    public class MovementBehaviour : MonoBehaviour, IMovable
     {
         [SerializeField] private float _speed;
 
@@ -36,12 +36,13 @@ namespace Behaviours
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(newPosition, _collider.radius);
 
+            var collisionCheck = true;
             foreach (var hit in hits)
             {
-                if (hit == _collider) return false;
+                if (hit != _collider) collisionCheck = false;
             }
 
-            return true;
+            return collisionCheck;
         }
     }
 }

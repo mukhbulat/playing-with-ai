@@ -1,5 +1,4 @@
-﻿using System;
-using Behaviours;
+﻿using Behaviours;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +7,7 @@ namespace Clients.Player
     [RequireComponent(typeof(PlayerInput))]
     public class PlayerInputHandler : MonoBehaviour
     {
-        [SerializeField] private MovementBehaviour _playerCharacterMovement;
+        [SerializeField] private UnitBehaviour _playerCharacter;
         
         private PlayerInput _playerInput;
         private InputAction _movement;
@@ -24,7 +23,8 @@ namespace Clients.Player
             var movementInput = _movement.ReadValue<Vector2>();
             if (movementInput != Vector2.zero)
             {
-                _playerCharacterMovement.Move(movementInput);
+                if (movementInput.magnitude > 1) movementInput.Normalize();
+                _playerCharacter.Movable.Move(movementInput);
             }
         }
     }
