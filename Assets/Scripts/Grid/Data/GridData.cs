@@ -12,7 +12,7 @@ namespace Grid.Data
         private TCell[,] _gridArray;
         private Vector3 _origin;
 
-        public GridData(int width, int height, float cellSize, Vector3 origin, TCell cell)
+        public GridData(int width, int height, float cellSize, Vector3 origin)
         {
             _width = width;
             _height = height;
