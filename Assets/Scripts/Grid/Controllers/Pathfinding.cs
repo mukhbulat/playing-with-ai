@@ -15,7 +15,8 @@ namespace Grid.Controllers
         
         public Pathfinding(int width, int height, float cellSize, Vector3 origin)
         {
-            _grid = new GridData<PathNode>(width, height, cellSize, origin, (GridData<PathNode> grid, int x, int y) => new PathNode(grid, x, y));
+            _grid = new GridData<PathNode>(width, height, cellSize, origin,
+                (GridData<PathNode> grid, int x, int y) => new PathNode(grid, x, y));
         }
         
         private GridData<PathNode> _grid;
@@ -27,6 +28,7 @@ namespace Grid.Controllers
         {
             PathNode startNode = _grid.GetValue(startX, startY);
             PathNode endNode = _grid.GetValue(endX, endY);
+            
             if (startNode == null)
             {
                 throw new Exception("Start node is null");
@@ -71,6 +73,12 @@ namespace Grid.Controllers
                 {
                     if (_closedList.Contains(neighbourNode))
                     {
+                        continue;
+                    }
+
+                    if (!neighbourNode.IsWalkable)
+                    {
+                        _closedList.Add(neighbourNode);
                         continue;
                     }
 
