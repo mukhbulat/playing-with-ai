@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="">
+    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="Ended? pathfinding. Changed PathNode some props became fully public. Changed GridData so generic is only classes.">
+      <change afterPath="$PROJECT_DIR$/Assets/GridMap.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Pathfinding.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/TestPathfinding.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/TestPathfinding.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Controllers/Pathfinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Controllers/Pathfinding.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/GridData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/GridData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/PathNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/PathNode.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +73,7 @@
       <updated>1661431912940</updated>
       <workItem from="1661432075616" duration="6292000" />
       <workItem from="1661516420356" duration="12587000" />
-      <workItem from="1661592091220" duration="4052000" />
+      <workItem from="1661592091220" duration="9226000" />
     </task>
     <task id="LOCAL-00001" summary="Added IMovable interface and UnitBehaviour. Changed PlayerInputHandler and MovementBehaviour to implement IMovable.">
       <created>1661522578019</created>
@@ -105,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661538141535</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Ended? pathfinding. Changed PathNode some props became fully public. Changed GridData so generic is only classes.">
+      <created>1661596395035</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661596395035</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +146,7 @@
     <MESSAGE value="Moved everything, related to Units to Units folder and adjusted namespaces. Added blank SingleUnitHandler." />
     <MESSAGE value="Added GridData" />
     <MESSAGE value="Added Pathfinding, PathNode, changed GridData" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Pathfinding, PathNode, changed GridData" />
+    <MESSAGE value="Ended? pathfinding. Changed PathNode some props became fully public. Changed GridData so generic is only classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ended? pathfinding. Changed PathNode some props became fully public. Changed GridData so generic is only classes." />
   </component>
 </project>

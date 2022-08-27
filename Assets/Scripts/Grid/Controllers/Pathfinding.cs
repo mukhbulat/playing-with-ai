@@ -8,12 +8,14 @@ namespace Grid.Controllers
 {
     public class Pathfinding
     {
+        public GridData<PathNode> Grid => _grid;
+
         private const int MoveDiagonalCost = 14;
         private const int MoveStraightCost = 10;
         
         public Pathfinding(int width, int height, float cellSize, Vector3 origin)
         {
-            _grid = new GridData<PathNode>(width, height, cellSize, origin);
+            _grid = new GridData<PathNode>(width, height, cellSize, origin, (GridData<PathNode> grid, int x, int y) => new PathNode(grid, x, y));
         }
         
         private GridData<PathNode> _grid;
@@ -21,13 +23,18 @@ namespace Grid.Controllers
         private List<PathNode> _openList;
         private HashSet<PathNode> _closedList;
 
-        private List<PathNode> FindPath(int startX, int startY, int endX, int endY)
+        public List<PathNode> FindPath(int startX, int startY, int endX, int endY)
         {
             PathNode startNode = _grid.GetValue(startX, startY);
             PathNode endNode = _grid.GetValue(endX, endY);
-            if (startNode == null || endNode == null)
+            if (startNode == null)
             {
                 throw new Exception("Start node is null");
+            }
+
+            if (endNode == null)
+            {
+                throw new Exception("End node is null");
             }
             
             _openList = new List<PathNode>() { startNode };
@@ -124,7 +131,7 @@ namespace Grid.Controllers
         {
             return _grid.GridArray[x, y];
         }
-
+        
         private List<PathNode> CalculatePathNode(PathNode endNode)
         {
             List<PathNode> path = new List<PathNode>();

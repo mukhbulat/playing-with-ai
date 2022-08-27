@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Object = System.Object;
 
 namespace Grid.Data
@@ -17,7 +18,7 @@ namespace Grid.Data
         private TCell[,] _gridArray;
         private Vector3 _origin;
 
-        public GridData(int width, int height, float cellSize, Vector3 origin)
+        public GridData(int width, int height, float cellSize, Vector3 origin, Func<GridData<TCell>, int, int, TCell> creationFunc)
         {
             _width = width;
             _height = height;
@@ -25,6 +26,13 @@ namespace Grid.Data
             _origin = origin;
 
             _gridArray = new TCell[width, height];
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    _gridArray[i, j] = creationFunc(this, i, j);
+                }
+            }
         }
 
         /*
@@ -71,6 +79,12 @@ namespace Grid.Data
         public TCell GetValue(Vector3 worldPosition)
         {
             int x, y;
+            GetArrayElement(worldPosition, out x, out y);
+            return GetValue(x, y);
+        }
+
+        public TCell GetValue(Vector3 worldPosition, out int x, out int y)
+        {
             GetArrayElement(worldPosition, out x, out y);
             return GetValue(x, y);
         }
