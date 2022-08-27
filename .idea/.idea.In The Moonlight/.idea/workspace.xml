@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="Added GridData">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Controllers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Controllers/Pathfinding.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Controllers/Pathfinding.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/PathNode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/PathNode.cs.meta" afterDir="false" />
+    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Controllers/Pathfinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Controllers/Pathfinding.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/GridData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/GridData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/PathNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/PathNode.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="rider.run.widget.enabled.cache" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -69,7 +67,8 @@
       <option name="presentableId" value="Default" />
       <updated>1661431912940</updated>
       <workItem from="1661432075616" duration="6292000" />
-      <workItem from="1661516420356" duration="11819000" />
+      <workItem from="1661516420356" duration="12587000" />
+      <workItem from="1661592091220" duration="4052000" />
     </task>
     <task id="LOCAL-00001" summary="Added IMovable interface and UnitBehaviour. Changed PlayerInputHandler and MovementBehaviour to implement IMovable.">
       <created>1661522578019</created>
@@ -99,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661535900240</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added Pathfinding, PathNode, changed GridData">
+      <created>1661538141535</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661538141535</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +133,7 @@
     <MESSAGE value="Added Affinity, IUnit, IDamageable and Damageable. Changed UnitBehaviour to implement IUnit interface. Added UnitsOnScene." />
     <MESSAGE value="Moved everything, related to Units to Units folder and adjusted namespaces. Added blank SingleUnitHandler." />
     <MESSAGE value="Added GridData" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added GridData" />
+    <MESSAGE value="Added Pathfinding, PathNode, changed GridData" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Pathfinding, PathNode, changed GridData" />
   </component>
 </project>

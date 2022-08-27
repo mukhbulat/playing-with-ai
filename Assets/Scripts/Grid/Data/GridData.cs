@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
+using Object = System.Object;
 
 namespace Grid.Data
 {
-    public class GridData<TCell>
+    public class GridData<TCell> where TCell : class
     {
         public TCell[,] GridArray => _gridArray;
+        public int Width => _width;
+        public int Height => _height;
+        public float CellSize => _cellSize;
+        public Vector3 Origin => _origin;
         
         private int _width;
         private int _height;
@@ -52,24 +57,22 @@ namespace Grid.Data
             SetValue(x, y, value);
         }
 
-        public bool GetValue(int x, int y, ref TCell value)
+        public TCell GetValue(int x, int y)
         {
             if (x >= 0 && y >= 0 && x < _width && y < _height)
             {
-                value = _gridArray[x, y];
-                return true;
+                return _gridArray[x, y];
             }
-            else
-            {
-                return false;
-            }
+
+            // This is bad actually
+            return null;
         }
 
-        public bool GetValue(Vector3 worldPosition, ref TCell value)
+        public TCell GetValue(Vector3 worldPosition)
         {
             int x, y;
             GetArrayElement(worldPosition, out x, out y);
-            return GetValue(x, y, ref value);
+            return GetValue(x, y);
         }
     }
 }
