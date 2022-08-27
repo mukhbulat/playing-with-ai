@@ -2,24 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="Added Behaviours for pathfinding: GeneralPathfindingGrid, StaticObstacle. For test: Pathfinder visible, changed TestPathfinding. Changed Pathfinding and PathNode to be not walkable if needed.">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/NotWalkable.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/NotWalkable.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Walkable.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Walkable.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/GeneralPathfindingGrid.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/GeneralPathfindingGrid.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/PathfinderVisible.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/PathfinderVisible.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/StaticObstacle.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/StaticObstacle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/EnemyStateMachine.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/EnemyStateMachine.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/SimpleEnemyAIBehaviour.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/SimpleEnemyAIBehaviour.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/State.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/State.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/Hide.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/Hide.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/Patrol.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/Patrol.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/Seek.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/Seek.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/TestPathfinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/TestPathfinding.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Controllers/Pathfinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Controllers/Pathfinding.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/PathNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/PathNode.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,7 @@
       <workItem from="1661432075616" duration="6292000" />
       <workItem from="1661516420356" duration="12587000" />
       <workItem from="1661592091220" duration="10130000" />
-      <workItem from="1661628290521" duration="5097000" />
+      <workItem from="1661628290521" duration="7002000" />
     </task>
     <task id="LOCAL-00001" summary="Added IMovable interface and UnitBehaviour. Changed PlayerInputHandler and MovementBehaviour to implement IMovable.">
       <created>1661522578019</created>
@@ -137,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661606176724</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added Behaviours for pathfinding: GeneralPathfindingGrid, StaticObstacle. For test: Pathfinder visible, changed TestPathfinding. Changed Pathfinding and PathNode to be not walkable if needed.">
+      <created>1661633448687</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1661633448687</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

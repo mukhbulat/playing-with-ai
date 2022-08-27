@@ -10,7 +10,7 @@
 
         public int GCost { get; set; }
         public int HCost { get; set; }
-        public int FCost { get; set; }
+        public int FCost { get; private set; }
         
         public bool IsWalkable { get; private set; }
 
