@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="Added Behaviours for pathfinding: GeneralPathfindingGrid, StaticObstacle. For test: Pathfinder visible, changed TestPathfinding. Changed Pathfinding and PathNode to be not walkable if needed.">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/EnemyStateMachine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/EnemyStateMachine.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/SimpleEnemyAIBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/SimpleEnemyAIBehaviour.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/State.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/State.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/Hide.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/Hide.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/Patrol.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/Patrol.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/Seek.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/Seek.cs.meta" afterDir="false" />
+    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/PathNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Data/PathNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/StaticObstacle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/StaticObstacle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/TestPathfinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Behaviours/TestPathfinding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Controllers/Pathfinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Controllers/Pathfinding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/EnemyStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/EnemyStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/EnemyStateMachine.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/EnemyStateMachine.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/SimpleEnemyAIBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/SimpleEnemyAIBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/State.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/State.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/AttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/AttackState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/AttackState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/ChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/ChaseState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/ChaseState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/ChaseState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/HideState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/HideState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/HideState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/HideState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/PatrolState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/PatrolState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/EnemyAI/States/PatrolState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/PatrolState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SingleUnitHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SingleUnitHandler.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scripts/Grid/Controllers/Pathfinding.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scripts/Grid/Data/PathNode.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -85,7 +88,9 @@
       <workItem from="1661432075616" duration="6292000" />
       <workItem from="1661516420356" duration="12587000" />
       <workItem from="1661592091220" duration="10130000" />
-      <workItem from="1661628290521" duration="7002000" />
+      <workItem from="1661628290521" duration="7565000" />
+      <workItem from="1661679872422" duration="1215000" />
+      <workItem from="1661693627196" duration="6893000" />
     </task>
     <task id="LOCAL-00001" summary="Added IMovable interface and UnitBehaviour. Changed PlayerInputHandler and MovementBehaviour to implement IMovable.">
       <created>1661522578019</created>
@@ -143,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661633448687</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added enemy AI behaviour and everything needed: states and state machine. Minor changes in PathNode">
+      <created>1661635636502</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1661635636502</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +187,7 @@
     <MESSAGE value="Ended? pathfinding. Changed PathNode some props became fully public. Changed GridData so generic is only classes." />
     <MESSAGE value="Added TestPathfinding. Changed GridData and Pathfinding." />
     <MESSAGE value="Added Behaviours for pathfinding: GeneralPathfindingGrid, StaticObstacle. For test: Pathfinder visible, changed TestPathfinding. Changed Pathfinding and PathNode to be not walkable if needed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Behaviours for pathfinding: GeneralPathfindingGrid, StaticObstacle. For test: Pathfinder visible, changed TestPathfinding. Changed Pathfinding and PathNode to be not walkable if needed." />
+    <MESSAGE value="Added enemy AI behaviour and everything needed: states and state machine. Minor changes in PathNode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added enemy AI behaviour and everything needed: states and state machine. Minor changes in PathNode" />
   </component>
 </project>

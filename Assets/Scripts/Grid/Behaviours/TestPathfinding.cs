@@ -25,7 +25,7 @@ namespace Grid.Behaviours
             Vector3 gameObjectPosition = _endGameObject.transform.position;
             gameObjectPosition.z = 0;
             _pathfinding.Grid.GetValue(gameObjectPosition, out int x, out int y);
-            List<PathNode> path = _pathfinding.FindPath(0, 0, x, y);
+            List<PathNode> path = _pathfinding.FindPath(3, 3, x, y);
             if (path != null)
             {
                 for (int i = 0; i < path.Count - 1; i++)

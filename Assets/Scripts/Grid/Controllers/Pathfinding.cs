@@ -24,11 +24,8 @@ namespace Grid.Controllers
         private List<PathNode> _openList;
         private HashSet<PathNode> _closedList;
 
-        public List<PathNode> FindPath(int startX, int startY, int endX, int endY)
+        public List<PathNode> FindPath(PathNode startNode, PathNode endNode)
         {
-            PathNode startNode = _grid.GetValue(startX, startY);
-            PathNode endNode = _grid.GetValue(endX, endY);
-            
             if (startNode == null)
             {
                 throw new Exception("Start node is null");
@@ -99,6 +96,89 @@ namespace Grid.Controllers
             }
 
             return null;
+        }
+
+        public List<PathNode> FindPath(int startX, int startY, int endX, int endY)
+        {
+            PathNode startNode = _grid.GetValue(startX, startY);
+            PathNode endNode = _grid.GetValue(endX, endY);
+
+            return FindPath(startNode, endNode);
+            
+            // Moved it to other FindPath.
+            /*
+            if (startNode == null)
+            {
+                throw new Exception("Start node is null");
+            }
+
+            if (endNode == null)
+            {
+                throw new Exception("End node is null");
+            }
+            
+            _openList = new List<PathNode>() { startNode };
+            _closedList = new HashSet<PathNode>();
+
+            for (int i = 0; i < _grid.Width; i++)
+            {
+                for (int j = 0; j < _grid.Height; j++)
+                {
+                    PathNode pathNode = _grid.GetValue(i, j);
+                    pathNode.GCost = int.MaxValue;
+                    pathNode.CalculateFCost();
+                    pathNode.PreviousNode = null;
+                }
+            }
+
+            startNode.GCost = 0;
+            startNode.HCost = CalculateDistanceCost(startNode, endNode);
+            
+            startNode.CalculateFCost();
+
+            while (_openList.Count > 0)
+            {
+                PathNode currentNode = GetLowestFCostNode(_openList);
+                if (currentNode == endNode)
+                {
+                    return CalculatePathNode(endNode);
+                }
+
+                _openList.Remove(currentNode);
+                _closedList.Add(currentNode);
+
+                foreach (var neighbourNode in GetNeighbourNodes(currentNode))
+                {
+                    if (_closedList.Contains(neighbourNode))
+                    {
+                        continue;
+                    }
+
+                    if (!neighbourNode.IsWalkable)
+                    {
+                        _closedList.Add(neighbourNode);
+                        continue;
+                    }
+
+                    int tentativeGCost = currentNode.GCost + CalculateDistanceCost(currentNode, neighbourNode);
+                    if (tentativeGCost < neighbourNode.GCost)
+                    {
+                        neighbourNode.PreviousNode = currentNode;
+                        neighbourNode.GCost = tentativeGCost;
+                        neighbourNode.HCost = CalculateDistanceCost(neighbourNode, endNode);
+                        neighbourNode.CalculateFCost();
+
+                        if (!_openList.Contains(neighbourNode))
+                        {
+                            _openList.Add(neighbourNode);
+                        }
+                    }
+                }
+            }
+
+            return null;
+            */
+
         }
 
         private HashSet<PathNode> GetNeighbourNodes(PathNode currentNode)

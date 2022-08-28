@@ -1,4 +1,4 @@
-﻿namespace Units.Behaviours.EnemyAI
+﻿namespace Units.Clients.Director.EnemyAI
 {
     public class EnemyStateMachine
     {
