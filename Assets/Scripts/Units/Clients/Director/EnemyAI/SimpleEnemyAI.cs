@@ -11,30 +11,33 @@ namespace Units.Clients.Director.EnemyAI
 {
     public class SimpleEnemyAI : MonoBehaviour
     {
+        private IUnit _unit;
+        private IUnit _player;
+
+        // Current Action:
         public event Action CurrentActionEnded;
         
+        private Coroutine _currentActionCoroutine;
+        
+        // Pathing and movement:
+        private Pathfinding _pathfinding;
         [SerializeField] private List<Transform> _waypoints;
         private int _currentWaypoint;
         private Vector3 _currentGlobalDestination;
         private Queue<Vector3> _pathNodes;
         private Vector3 _currentPathNodeDestination;
-        
-        // Do not turn on until 117 wont work better.
-        private bool _precisionMovement = false; 
-        
-        private Coroutine _currentActionCoroutine;
-        
-        private IUnit _unit;
-        private Pathfinding _pathfinding;
 
+        // Do not turn on until PathfindingMovement() wont work
+        // better in precision mode. (Never? Don't need this anyway)
+        private bool _precisionMovement = false;
         
+        // Seeking player:
+        [SerializeField] private float _playerVisibilityRange = 10f;
+        private int _ObjectPlayerLayerMask = (1 << 7) + (1 << 6);
+
+        // State machine:
         private EnemyStateMachine _stateMachine;
         private State _attack, _chase, _hide, _patrol;
-
-        private void Awake()
-        {
-            
-        }
 
         private IEnumerator Start()
         {
@@ -42,7 +45,13 @@ namespace Units.Clients.Director.EnemyAI
             
             _pathfinding = FindObjectOfType<Grid.Behaviours.GeneralPathfindingGrid>().Pathfinding;
             _unit = GetComponent<IUnit>();
-
+            _player = GameObject.FindWithTag("Player").GetComponent<IUnit>();
+            
+            if (_player == null)
+            {
+                Debug.Log("Player is not found");
+            }
+            
             ResetStateMachine();
         }
 
@@ -82,12 +91,7 @@ namespace Units.Clients.Director.EnemyAI
 
             _currentActionCoroutine = StartCoroutine(PathfindingMovement());
         }
-
-        public bool CheckIfDestinationReached()
-        {
-            return (transform.position - _currentGlobalDestination).magnitude < 0.05f;
-        }
-
+        
         private IEnumerator PathfindingMovement()
         {
             PathfinderResetNodeList();
@@ -145,6 +149,21 @@ namespace Units.Clients.Director.EnemyAI
             }
             
             _pathNodes.Dequeue();
+        }
+
+        public void CheckPlayer()
+        {
+            var position = transform.position;
+            var hit = Physics2D.Raycast(position, _player.Transform.position - position, 
+                Mathf.Infinity, _ObjectPlayerLayerMask);
+            
+            if (hit.transform == _player.Transform)
+            {
+                if (hit.distance < _playerVisibilityRange)
+                {
+                    Debug.Log("Found player in range");
+                }
+            }
         }
     }
 }

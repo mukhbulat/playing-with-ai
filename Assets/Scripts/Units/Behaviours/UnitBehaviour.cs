@@ -7,6 +7,7 @@ namespace Units.Behaviours
     public class UnitBehaviour : MonoBehaviour, IUnit
     {
         // Props
+        public Transform Transform => transform;
         public IMovable Movable { get; private set; }
         public IDamageable Damageable { get; private set; }
         public Affinity Affinity => _affinity;

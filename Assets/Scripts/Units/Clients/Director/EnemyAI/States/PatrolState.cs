@@ -14,6 +14,8 @@
         public override void LogicUpdate()
         {
             base.LogicUpdate();
+            
+            Enemy.CheckPlayer();
             if (IsCurrentActionEnded)
             {
                 IsCurrentActionEnded = false;
