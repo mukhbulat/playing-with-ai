@@ -14,9 +14,12 @@
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-            
+            if (IsCurrentActionEnded)
+            {
+                IsCurrentActionEnded = false;
+                Enemy.MoveToNextWaypoint();
+            }
         }
-
         public override void Exit()
         {
             base.Exit();

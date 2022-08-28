@@ -10,15 +10,17 @@
         
         protected EnemyStateMachine StateMachine;
         protected SimpleEnemyAI Enemy;
+        protected bool IsCurrentActionEnded;
 
         public virtual void Enter()
         {
             Enemy.CurrentActionEnded += OnCurrentActionEnded;
+            IsCurrentActionEnded = true;
         }
 
-        protected void OnCurrentActionEnded()
+        protected virtual void OnCurrentActionEnded()
         {
-            
+            IsCurrentActionEnded = true;
         }
 
         public virtual void LogicUpdate()

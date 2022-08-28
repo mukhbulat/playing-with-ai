@@ -30,7 +30,15 @@ namespace Units.Clients.Director.EnemyAI
 
         private void Awake()
         {
+            
+        }
+
+        private IEnumerator Start()
+        {
+            yield return null;
+            
             _pathfinding = FindObjectOfType<Grid.Behaviours.GeneralPathfindingGrid>().Pathfinding;
+            _unit = GetComponent<IUnit>();
 
             ResetStateMachine();
         }
@@ -48,12 +56,12 @@ namespace Units.Clients.Director.EnemyAI
 
         private void Update()
         {
-            _stateMachine.CurrentState.LogicUpdate();
+            _stateMachine?.CurrentState.LogicUpdate();
         }
 
         public void MoveToNextWaypoint()
         {
-            if (_currentWaypoint >= _waypoints.Count)
+            if (_currentWaypoint >= _waypoints.Count - 1)
             {
                 _currentWaypoint = 0;
             }
