@@ -19,6 +19,9 @@ namespace Units.Clients.Director.EnemyAI
         private Queue<Vector3> _pathNodes;
         private Vector3 _currentPathNodeDestination;
         
+        // Do not turn on until 117 wont work better.
+        private bool _precisionMovement = false; 
+        
         private Coroutine _currentActionCoroutine;
         
         private IUnit _unit;
@@ -97,22 +100,25 @@ namespace Units.Clients.Director.EnemyAI
 
             while (_pathNodes.Count > 0)
             {
-                var vectorToNextNode = (_pathNodes.Peek() - transform.position);
-                
-                while (vectorToNextNode.magnitude >= 0.05f)
+                while ((_pathNodes.Peek() - transform.position).magnitude >= 0.05f)
                 {
-                    _unit.Movable.Move(vectorToNextNode.normalized);
+                    _unit.Movable.Move((_pathNodes.Peek() - transform.position).normalized);
                     yield return null;
                 }
 
                 _pathNodes.Dequeue();
             }
+            
+            // Don't want to spoil smooth movement, so precision (I guess its not necessary after all.
+            // If turned on, unit will move after reaching destination cell to destination location. 
 
-            var vectorToDestination = (_currentGlobalDestination - transform.position);
-            while (vectorToDestination.magnitude > 0.05f)
+            if (_precisionMovement)
             {
-                _unit.Movable.Move(vectorToDestination.normalized);
-                yield return null;
+                while ((_currentGlobalDestination - transform.position).magnitude > 0.05f)
+                {
+                    _unit.Movable.Move((_currentGlobalDestination - transform.position).normalized);
+                    yield return null;
+                }
             }
 
             CurrentActionEnded?.Invoke();
@@ -133,13 +139,11 @@ namespace Units.Clients.Director.EnemyAI
             _pathNodes = new Queue<Vector3>();
             foreach (var node in nodes)
             {
-                var nodePosition = new Vector3(node.HorizontalPosition * _pathfinding.Grid.CellSize,
-                    node.VerticalPosition * _pathfinding.Grid.CellSize, 0);
+                var nodePosition = new Vector3(node.HorizontalPosition * _pathfinding.Grid.CellSize + _pathfinding.Grid.CellSize * 0.5f,
+                    node.VerticalPosition * _pathfinding.Grid.CellSize + _pathfinding.Grid.CellSize * 0.5f, 0);
                 _pathNodes.Enqueue(nodePosition);
             }
             
-            // 
-            Debug.Log("Removed first node");
             _pathNodes.Dequeue();
         }
     }

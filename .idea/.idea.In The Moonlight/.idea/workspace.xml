@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="Changed StaticObstacle, TestPathfinding and Pathfinding. Moved EnemyAI with state machine to director. Changed State and SimpleEnemyAI.">
+    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="Changed State, SimpleEnemyAI and PatrolState: debugging patrol state of enemy AI">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/State.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/PatrolState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/PatrolState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scripts/Units/Clients/Director/EnemyAI/States/PatrolState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -71,7 +75,7 @@
       <workItem from="1661592091220" duration="10130000" />
       <workItem from="1661628290521" duration="7565000" />
       <workItem from="1661679872422" duration="1215000" />
-      <workItem from="1661693627196" duration="9816000" />
+      <workItem from="1661693627196" duration="12415000" />
     </task>
     <task id="LOCAL-00001" summary="Added IMovable interface and UnitBehaviour. Changed PlayerInputHandler and MovementBehaviour to implement IMovable.">
       <created>1661522578019</created>
@@ -143,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661702758232</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Changed State, SimpleEnemyAI and PatrolState: debugging patrol state of enemy AI">
+      <created>1661711873096</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1661711873096</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +188,7 @@
     <MESSAGE value="Added Behaviours for pathfinding: GeneralPathfindingGrid, StaticObstacle. For test: Pathfinder visible, changed TestPathfinding. Changed Pathfinding and PathNode to be not walkable if needed." />
     <MESSAGE value="Added enemy AI behaviour and everything needed: states and state machine. Minor changes in PathNode" />
     <MESSAGE value="Changed StaticObstacle, TestPathfinding and Pathfinding. Moved EnemyAI with state machine to director. Changed State and SimpleEnemyAI." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed StaticObstacle, TestPathfinding and Pathfinding. Moved EnemyAI with state machine to director. Changed State and SimpleEnemyAI." />
+    <MESSAGE value="Changed State, SimpleEnemyAI and PatrolState: debugging patrol state of enemy AI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed State, SimpleEnemyAI and PatrolState: debugging patrol state of enemy AI" />
   </component>
 </project>
