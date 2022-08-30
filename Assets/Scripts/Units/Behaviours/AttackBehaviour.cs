@@ -11,14 +11,9 @@ namespace Units.Behaviours
         [SerializeField] private float _damage;
         [SerializeField] private float _attackSpeed;
 
-        public void AttackAnimationWorked()
+        public void StartAttack(Vector3 direction)
         {
-            
-        }
-
-        public void StartAttack()
-        {
-            
+            // todo: animation and projectile spawn
         }
     }
 }
