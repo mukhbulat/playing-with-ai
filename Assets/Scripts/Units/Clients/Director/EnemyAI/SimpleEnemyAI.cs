@@ -35,7 +35,8 @@ namespace Units.Clients.Director.EnemyAI
         [SerializeField] private float _playerCloseRange = 10f;
         [SerializeField] private float _playerOuterRange = 12f;
         private float _attackRange;
-        private int _ObjectPlayerLayerMask = (1 << 7) + (1 << 6);
+        private int _objectAndPlayerLayerMask = (1 << 7) + (1 << 6);
+        private Vector3 _lastSeenPosition;
 
         // State machine:
         public State Attack => _attack;
@@ -48,6 +49,7 @@ namespace Units.Clients.Director.EnemyAI
 
         private IEnumerator Start()
         {
+            _player = GameObject.FindWithTag("Player").GetComponent<IUnit>();
             yield return null;
             
             _pathfinding = FindObjectOfType<Grid.Behaviours.GeneralPathfindingGrid>().Pathfinding;
@@ -55,7 +57,6 @@ namespace Units.Clients.Director.EnemyAI
             _unit = GetComponent<IUnit>();
             _attackRange = _unit.Attacking.AttackRange;
             
-            _player = GameObject.FindWithTag("Player").GetComponent<IUnit>();
 
             ResetStateMachine();
         }
@@ -77,6 +78,67 @@ namespace Units.Clients.Director.EnemyAI
             _stateMachine?.CurrentState.LogicUpdate();
         }
 
+        public void StartChasing()
+        {
+            if (_currentActionCoroutine != null)
+            {
+                StopCoroutine(_currentActionCoroutine);
+            }
+
+            _currentActionCoroutine = StartCoroutine(ChaseCoroutine());
+        }
+
+        private IEnumerator ChaseCoroutine()
+        {
+            while (CheckPlayerState != CheckPlayerState.NotVisible)
+            {
+                while ((transform.position - _player.Transform.position).magnitude > (_attackRange * 0.8f))
+                {
+                    // Find a path, if it's not null, run to the player and check if his position changed too
+                    // much every couple of seconds.
+                    _currentGlobalDestination = _player.Transform.position;
+                    
+                    PathfinderResetNodeList();
+
+                    if (_pathNodes == null || _pathNodes.Count == 0)
+                    {
+                        CurrentActionEnded?.Invoke();
+                        yield break;
+                        
+                    }
+                    
+                    while (_pathNodes.Count > 0)
+                    {
+                        while ((_pathNodes.Peek() - transform.position).magnitude >= 0.05f)
+                        {
+                            _unit.Movable.Move((_pathNodes.Peek() - transform.position).normalized);
+                            yield return null;
+                        }
+
+                        _pathNodes.Dequeue();
+                    }
+                }
+
+                if (CheckPlayerState == CheckPlayerState.InAttackRange)
+                {
+                    CurrentActionEnded?.Invoke();
+                    yield break;
+                }
+            }
+        }
+
+        private void MoveToDestination(Vector3 destinationPoint)
+        {
+            _currentGlobalDestination = destinationPoint;
+
+            if (_currentActionCoroutine != null)
+            {
+                StopCoroutine(_currentActionCoroutine);
+            }
+
+            _currentActionCoroutine = StartCoroutine(PathfindingMovementCoroutine());
+        }
+
         public void MoveToNextWaypoint()
         {
             if (_currentWaypoint >= _waypoints.Count - 1)
@@ -88,17 +150,10 @@ namespace Units.Clients.Director.EnemyAI
                 _currentWaypoint += 1;
             }
 
-            _currentGlobalDestination = _waypoints[_currentWaypoint].position;
-
-            if (_currentActionCoroutine != null)
-            {
-                StopCoroutine(_currentActionCoroutine);
-            }
-
-            _currentActionCoroutine = StartCoroutine(PathfindingMovement());
+            MoveToDestination(_waypoints[_currentWaypoint].position);
         }
         
-        private IEnumerator PathfindingMovement()
+        private IEnumerator PathfindingMovementCoroutine()
         {
             PathfinderResetNodeList();
 
@@ -160,25 +215,32 @@ namespace Units.Clients.Director.EnemyAI
         private CheckPlayerState CheckPlayer()
         {
             var position = transform.position;
+            if (_player == null)
+            {
+                return CheckPlayerState.NotVisible;
+            }
             var hit = Physics2D.Raycast(position, _player.Transform.position - position, 
-                Mathf.Infinity, _ObjectPlayerLayerMask);
+                Mathf.Infinity, _objectAndPlayerLayerMask);
             
             if (hit.transform == _player.Transform)
             {
                 var hitDistance = hit.distance;
-                
+
                 if (hitDistance < _attackRange)
                 {
+                    _lastSeenPosition = _player.Transform.position;
                     return CheckPlayerState.InAttackRange;
                 }
                 
                 if (hitDistance < _playerCloseRange)
                 {
+                    _lastSeenPosition = _player.Transform.position;
                     return CheckPlayerState.InCloseRange;
                 }
                 
                 if (hitDistance < _playerOuterRange)
                 {
+                    _lastSeenPosition = _player.Transform.position;
                     return CheckPlayerState.InOuterRange;
                 }
             }

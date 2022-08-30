@@ -17,6 +17,10 @@ namespace Units.Behaviours
 
         public void Move(Vector2 direction)
         {
+            if (direction.magnitude > 1)
+            {
+                direction.Normalize();
+            }
             var velocity = Vector2.zero;
             var position = (Vector2) transform.position;
             

@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 90110269}
   - component: {fileID: 90110270}
   - component: {fileID: 90110271}
+  - component: {fileID: 90110273}
   m_Layer: 8
   m_Name: Simple Enemy
   m_TagString: Untagged
@@ -228,7 +229,8 @@ MonoBehaviour:
   - {fileID: 268466368}
   - {fileID: 971744968}
   - {fileID: 728714062}
-  _playerVisibilityRange: 10
+  _playerCloseRange: 10
+  _playerOuterRange: 12
 --- !u!114 &90110270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +274,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &90110273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90110266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7780239af7cc4990a98d233030b4337e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackRange: 5
+  _damage: 0
+  _attackSpeed: 0
 --- !u!1 &144208979
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c14156d1bd43f438a4918695e38029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 10
 --- !u!58 &524305093
 CircleCollider2D:
   m_ObjectHideFlags: 0

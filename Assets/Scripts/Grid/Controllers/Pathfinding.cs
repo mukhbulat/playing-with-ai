@@ -26,14 +26,10 @@ namespace Grid.Controllers
 
         public List<PathNode> FindPath(PathNode startNode, PathNode endNode)
         {
-            if (startNode == null)
+            if (endNode == null || startNode == null)
             {
-                throw new Exception("Start node is null");
-            }
-
-            if (endNode == null)
-            {
-                throw new Exception("End node is null");
+                Debug.Log("End node or start node are null");
+                return null;
             }
             
             _openList = new List<PathNode>() { startNode };
