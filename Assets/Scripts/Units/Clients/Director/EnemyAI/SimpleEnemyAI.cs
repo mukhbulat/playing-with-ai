@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Grid.Controllers;
-using Grid.Data;
 using Units.Clients.Director.EnemyAI.States;
 using UnityEngine;
 using IUnit = Units.Controllers.IUnit;
@@ -31,11 +30,19 @@ namespace Units.Clients.Director.EnemyAI
         // better in precision mode. (Never? Don't need this anyway)
         private bool _precisionMovement = false;
         
-        // Seeking player:
-        [SerializeField] private float _playerVisibilityRange = 10f;
+        // Seeking player and attacking him:
+        public CheckPlayerState CheckPlayerState { get; private set; }
+        [SerializeField] private float _playerCloseRange = 10f;
+        [SerializeField] private float _playerOuterRange = 12f;
+        private float _attackRange;
         private int _ObjectPlayerLayerMask = (1 << 7) + (1 << 6);
 
         // State machine:
+        public State Attack => _attack;
+        public State Chase => _chase;
+        public State Hide => _hide;
+        public State Patrol => _patrol;
+        
         private EnemyStateMachine _stateMachine;
         private State _attack, _chase, _hide, _patrol;
 
@@ -44,14 +51,12 @@ namespace Units.Clients.Director.EnemyAI
             yield return null;
             
             _pathfinding = FindObjectOfType<Grid.Behaviours.GeneralPathfindingGrid>().Pathfinding;
+            
             _unit = GetComponent<IUnit>();
+            _attackRange = _unit.Attacking.AttackRange;
+            
             _player = GameObject.FindWithTag("Player").GetComponent<IUnit>();
-            
-            if (_player == null)
-            {
-                Debug.Log("Player is not found");
-            }
-            
+
             ResetStateMachine();
         }
 
@@ -68,6 +73,7 @@ namespace Units.Clients.Director.EnemyAI
 
         private void Update()
         {
+            CheckPlayerState = CheckPlayer();
             _stateMachine?.CurrentState.LogicUpdate();
         }
 
@@ -151,7 +157,7 @@ namespace Units.Clients.Director.EnemyAI
             _pathNodes.Dequeue();
         }
 
-        public void CheckPlayer()
+        private CheckPlayerState CheckPlayer()
         {
             var position = transform.position;
             var hit = Physics2D.Raycast(position, _player.Transform.position - position, 
@@ -159,11 +165,25 @@ namespace Units.Clients.Director.EnemyAI
             
             if (hit.transform == _player.Transform)
             {
-                if (hit.distance < _playerVisibilityRange)
+                var hitDistance = hit.distance;
+                
+                if (hitDistance < _attackRange)
                 {
-                    Debug.Log("Found player in range");
+                    return CheckPlayerState.InAttackRange;
+                }
+                
+                if (hitDistance < _playerCloseRange)
+                {
+                    return CheckPlayerState.InCloseRange;
+                }
+                
+                if (hitDistance < _playerOuterRange)
+                {
+                    return CheckPlayerState.InOuterRange;
                 }
             }
+
+            return CheckPlayerState.NotVisible;
         }
     }
 }

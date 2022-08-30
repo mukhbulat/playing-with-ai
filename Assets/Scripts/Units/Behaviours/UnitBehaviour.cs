@@ -9,6 +9,7 @@ namespace Units.Behaviours
         // Props
         public Transform Transform => transform;
         public IMovable Movable { get; private set; }
+        public IAttacking Attacking { get; private set; }
         public IDamageable Damageable { get; private set; }
         public Affinity Affinity => _affinity;
         
@@ -18,6 +19,7 @@ namespace Units.Behaviours
         private void Awake()
         {
             Movable = GetComponent<IMovable>();
+            Attacking = GetComponent<IAttacking>();
             Damageable = new Damageable(this, _maxHealth);
         }
 

@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="Debugging: changed simple enemy AI, removed critical errors in patrol state. Made movement less precision and more smooth.">
+    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/AttackBehaviour.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/AttackBehaviour.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/CheckPlayerState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/CheckPlayerState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/IAttacking.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/IAttacking.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/UnitBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/UnitBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/PatrolState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/PatrolState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/IUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/IUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,12 +27,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scenes/SampleScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scripts/Units/Clients/Director/EnemyAI/States/PatrolState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -87,7 +86,9 @@
       <workItem from="1661592091220" duration="10130000" />
       <workItem from="1661628290521" duration="7565000" />
       <workItem from="1661679872422" duration="1215000" />
-      <workItem from="1661693627196" duration="15236000" />
+      <workItem from="1661693627196" duration="15364000" />
+      <workItem from="1661765978711" duration="3911000" />
+      <workItem from="1661851951545" duration="3625000" />
     </task>
     <task id="LOCAL-00001" summary="Added IMovable interface and UnitBehaviour. Changed PlayerInputHandler and MovementBehaviour to implement IMovable.">
       <created>1661522578019</created>
@@ -173,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661718570590</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added transform reference to IUnit and UnitBehaviour. Changed PatrolState and SimpleEnemyAI to raycast for player.">
+      <created>1661721432239</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1661721432239</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +217,7 @@
     <MESSAGE value="Changed StaticObstacle, TestPathfinding and Pathfinding. Moved EnemyAI with state machine to director. Changed State and SimpleEnemyAI." />
     <MESSAGE value="Changed State, SimpleEnemyAI and PatrolState: debugging patrol state of enemy AI" />
     <MESSAGE value="Debugging: changed simple enemy AI, removed critical errors in patrol state. Made movement less precision and more smooth." />
-    <option name="LAST_COMMIT_MESSAGE" value="Debugging: changed simple enemy AI, removed critical errors in patrol state. Made movement less precision and more smooth." />
+    <MESSAGE value="Added transform reference to IUnit and UnitBehaviour. Changed PatrolState and SimpleEnemyAI to raycast for player." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added transform reference to IUnit and UnitBehaviour. Changed PatrolState and SimpleEnemyAI to raycast for player." />
   </component>
 </project>

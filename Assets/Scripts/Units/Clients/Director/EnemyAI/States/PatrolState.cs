@@ -15,7 +15,11 @@
         {
             base.LogicUpdate();
             
-            Enemy.CheckPlayer();
+            if (Enemy.CheckPlayerState == CheckPlayerState.InCloseRange)
+            {
+                StateMachine.ChangeState(Enemy.Chase);
+            }
+
             if (IsCurrentActionEnded)
             {
                 IsCurrentActionEnded = false;
