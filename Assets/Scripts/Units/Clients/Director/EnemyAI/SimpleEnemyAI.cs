@@ -87,6 +87,39 @@ namespace Units.Clients.Director.EnemyAI
 
             _currentActionCoroutine = StartCoroutine(ChaseCoroutine());
         }
+        
+        public void StartPatrol()
+        {
+            if (_currentWaypoint >= _waypoints.Count - 1)
+            {
+                _currentWaypoint = 0;
+            }
+            else
+            {
+                _currentWaypoint += 1;
+            }
+
+            MoveToDestination(_waypoints[_currentWaypoint].position);
+        }
+
+        public void StartAttack()
+        {
+            if (_currentActionCoroutine != null)
+            {
+                StopCoroutine(_currentActionCoroutine);
+            }
+
+            _currentActionCoroutine = StartCoroutine(AttackCoroutine());
+        }
+
+        private IEnumerator AttackCoroutine()
+        {
+            while (CheckPlayerState == CheckPlayerState.InAttackRange)
+            {
+                _unit.Attacking.StartAttack(_player.Transform.position);
+                yield return null;
+            }
+        }
 
         private IEnumerator ChaseCoroutine()
         {
@@ -127,32 +160,6 @@ namespace Units.Clients.Director.EnemyAI
             }
         }
 
-        private void MoveToDestination(Vector3 destinationPoint)
-        {
-            _currentGlobalDestination = destinationPoint;
-
-            if (_currentActionCoroutine != null)
-            {
-                StopCoroutine(_currentActionCoroutine);
-            }
-
-            _currentActionCoroutine = StartCoroutine(PathfindingMovementCoroutine());
-        }
-
-        public void MoveToNextWaypoint()
-        {
-            if (_currentWaypoint >= _waypoints.Count - 1)
-            {
-                _currentWaypoint = 0;
-            }
-            else
-            {
-                _currentWaypoint += 1;
-            }
-
-            MoveToDestination(_waypoints[_currentWaypoint].position);
-        }
-        
         private IEnumerator PathfindingMovementCoroutine()
         {
             PathfinderResetNodeList();
@@ -210,6 +217,18 @@ namespace Units.Clients.Director.EnemyAI
             }
             
             _pathNodes.Dequeue();
+        }
+        
+        private void MoveToDestination(Vector3 destinationPoint)
+        {
+            _currentGlobalDestination = destinationPoint;
+
+            if (_currentActionCoroutine != null)
+            {
+                StopCoroutine(_currentActionCoroutine);
+            }
+
+            _currentActionCoroutine = StartCoroutine(PathfindingMovementCoroutine());
         }
 
         private CheckPlayerState CheckPlayer()

@@ -23,7 +23,7 @@
             if (IsCurrentActionEnded)
             {
                 IsCurrentActionEnded = false;
-                Enemy.MoveToNextWaypoint();
+                Enemy.StartPatrol();
             }
         }
         public override void Exit()
