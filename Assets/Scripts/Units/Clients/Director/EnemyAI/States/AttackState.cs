@@ -18,6 +18,9 @@ namespace Units.Clients.Director.EnemyAI.States
                 StateMachine.ChangeState(Enemy.Chase);
             }
             
+            if (!IsCurrentActionEnded) return;
+            Enemy.StartAttack(); 
+            IsCurrentActionEnded = false;
         }
     }
 }

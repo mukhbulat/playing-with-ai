@@ -27,7 +27,6 @@ namespace Units.Clients.Director.EnemyAI.States
             if (Enemy.CheckPlayerState == CheckPlayerState.InAttackRange)
             {
                 StateMachine.ChangeState(Enemy.Attack);
-                Debug.Log("Starting attack");
             }
         }
     }

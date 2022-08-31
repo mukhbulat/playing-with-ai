@@ -116,9 +116,11 @@ namespace Units.Clients.Director.EnemyAI
         {
             while (CheckPlayerState == CheckPlayerState.InAttackRange)
             {
-                _unit.Attacking.StartAttack(_player.Transform.position);
+                _unit.Attacking.StartAttack((_player.Transform.position - transform.position).normalized * 0.2f);
                 yield return null;
             }
+            
+            CurrentActionEnded?.Invoke();
         }
 
         private IEnumerator ChaseCoroutine()

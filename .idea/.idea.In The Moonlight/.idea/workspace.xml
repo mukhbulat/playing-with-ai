@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/ProjectileBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/ProjectileBehaviour.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Game/bullet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Game/bullet.png.meta" afterDir="false" />
+    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="Added Projectiles directory with ProjectileBehaviour and ProjectileMovement. Changed enemy AI, changed attack behaviour and state">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/AttackBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/AttackBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/AttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/PatrolState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/PatrolState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/IAttacking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/IAttacking.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/ChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/ChaseState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +17,10 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scripts/Units/Behaviours/AttackBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scripts/Units/Behaviours/AttackBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -90,7 +84,7 @@
       <workItem from="1661765978711" duration="3911000" />
       <workItem from="1661851951545" duration="8834000" />
       <workItem from="1661878675376" duration="9299000" />
-      <workItem from="1661941399248" duration="3449000" />
+      <workItem from="1661941399248" duration="16542000" />
     </task>
     <task id="LOCAL-00001" summary="Added IMovable interface and UnitBehaviour. Changed PlayerInputHandler and MovementBehaviour to implement IMovable.">
       <created>1661522578019</created>
@@ -204,7 +198,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661891136606</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Changed IAttacking and AttackBehaviour, changed enemy AI, attack and patrol state, added projectile behaviour.">
+      <created>1661946733313</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1661946733313</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added Projectiles directory with ProjectileBehaviour and ProjectileMovement. Changed enemy AI, changed attack behaviour and state">
+      <created>1661964953040</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1661964953040</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +252,8 @@
     <MESSAGE value="Added IAttacking and AttackBehaviour, added it to IUnit and UnitBehaviour. Added CheckPlayerState and changed enemy AI and PatrolState to work with it" />
     <MESSAGE value="Minor change in pathfinding, MovementBehaviour.Move normalizes vector, worked out Chase state and enemy AI, minor testing changes in attack state" />
     <MESSAGE value="Changed IAttacking and AttackBehaviour" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed IAttacking and AttackBehaviour" />
+    <MESSAGE value="Changed IAttacking and AttackBehaviour, changed enemy AI, attack and patrol state, added projectile behaviour." />
+    <MESSAGE value="Added Projectiles directory with ProjectileBehaviour and ProjectileMovement. Changed enemy AI, changed attack behaviour and state" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Projectiles directory with ProjectileBehaviour and ProjectileMovement. Changed enemy AI, changed attack behaviour and state" />
   </component>
 </project>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Projectiles.Behaviours;
 using Units.Controllers;
 using UnityEngine;
 
@@ -16,14 +17,15 @@ namespace Units.Behaviours
         [SerializeField] private ProjectileBehaviour _projectilePrefab;
         [SerializeField] private bool _isPlayers;
         
-        private bool _canAttack;
+        private bool _canAttack = true;
 
         public void StartAttack(Vector3 direction)
         {
             // todo: animation and projectile spawn
             if (!_canAttack) return;
+            Debug.Log("AttackBehaviour StartAttack worked");
             direction = direction.normalized;
-            var projectile = Instantiate(_projectilePrefab, direction, Quaternion.identity);
+            var projectile = Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
             projectile.Spawn(_damage, direction, _isPlayers);
             StartCoroutine(WaitForAttack());
         }
