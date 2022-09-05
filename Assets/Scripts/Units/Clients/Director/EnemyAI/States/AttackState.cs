@@ -16,9 +16,12 @@ namespace Units.Clients.Director.EnemyAI.States
             {
                 StateMachine.ChangeState(Enemy.Chase);
             }
-            
-            if (!IsCurrentActionEnded) return;
-            Enemy.StartAttack(); 
+        }
+
+        protected override void OnCurrentActionEnded()
+        {
+            base.OnCurrentActionEnded();
+            Enemy.StartAttacking(); 
             IsCurrentActionEnded = false;
         }
     }

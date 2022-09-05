@@ -16,15 +16,20 @@
         public override void LogicUpdate()
         {
             base.LogicUpdate();
+            
+            if (Enemy.CheckPlayerState != CheckPlayerState.NotVisible)
+            {
+                StateMachine.ChangeState(Enemy.Chase);
+            }
+        }
+
+        protected override void OnCurrentActionEnded()
+        {
+            base.OnCurrentActionEnded();
             if (IsCurrentActionEnded)
             {
                 StateMachine.ChangeState(Enemy.Patrol);
                 return;
-            }
-
-            if (Enemy.CheckPlayerState != CheckPlayerState.NotVisible)
-            {
-                StateMachine.ChangeState(Enemy.Chase);
             }
         }
     }

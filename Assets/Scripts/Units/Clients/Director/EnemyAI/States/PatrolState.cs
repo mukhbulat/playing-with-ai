@@ -19,13 +19,15 @@
             {
                 StateMachine.ChangeState(Enemy.Chase);
             }
-
-            if (IsCurrentActionEnded)
-            {
-                IsCurrentActionEnded = false;
-                Enemy.StartPatrol();
-            }
         }
+
+        protected override void OnCurrentActionEnded()
+        {
+            base.OnCurrentActionEnded();
+            IsCurrentActionEnded = false;
+            Enemy.StartPatrolling();
+        }
+
         public override void Exit()
         {
             base.Exit();

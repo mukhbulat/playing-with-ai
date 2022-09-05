@@ -25,7 +25,10 @@
 
         public virtual void LogicUpdate()
         {
-            
+            if (Enemy.LowHealth && StateMachine.CurrentState != Enemy.Hide)
+            {
+                StateMachine.ChangeState(Enemy.Hide);
+            }
         }
 
         public virtual void Exit()

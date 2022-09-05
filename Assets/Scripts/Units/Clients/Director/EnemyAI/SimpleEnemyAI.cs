@@ -19,24 +19,31 @@ namespace Units.Clients.Director.EnemyAI
         private Coroutine _currentActionCoroutine;
         
         // Pathing and movement:
-        private Pathfinding _pathfinding;
         [SerializeField] private List<Transform> _waypoints;
+        
+        private Pathfinding _pathfinding;
         private int _currentWaypoint;
         private Vector3 _currentGlobalDestination;
         private Queue<Vector3> _pathNodes;
         private Vector3 _currentPathNodeDestination;
-
+        
         // Do not turn on until PathfindingMovement() wont work
         // better in precision mode. (Never? Don't need this anyway)
         private bool _precisionMovement = false;
         
+        // Exclusively for HideState
+        public bool LowHealth => (_unit.Damageable.CurrentHealth / _unit.Damageable.MaxHealth < _healthHidePercent);
+
+        [SerializeField] private float _healthHidePercent = 0.3f;
+
         // Seeking player and attacking him:
         public CheckPlayerState CheckPlayerState { get; private set; }
         [SerializeField] private float _playerCloseRange = 10f;
         [SerializeField] private float _playerOuterRange = 12f;
+        [SerializeField] private float _attackDistanceRatio = 0.8f;
         private float _attackRange;
         private int _objectAndPlayerLayerMask = (1 << 7) + (1 << 6);
-        public Vector3 LastSeenPosition { get; private set; }
+        private Vector3 _lastSeenPosition;
 
         // State machine:
         public State Attack => _attack;
@@ -80,9 +87,18 @@ namespace Units.Clients.Director.EnemyAI
             _stateMachine?.CurrentState.LogicUpdate();
         }
 
+        public void StartHiding()
+        {
+            var hidingSpot = (_player.Transform.position - transform.position).normalized;
+            hidingSpot.x = hidingSpot.x > 0 ? 0 : _pathfinding.Grid.Width * _pathfinding.Grid.CellSize;
+            hidingSpot.y = hidingSpot.y > 0 ? 0 : _pathfinding.Grid.Height * _pathfinding.Grid.CellSize;
+            
+            MoveToDestination(hidingSpot);
+        }
+
         public void StartSeeking()
         {
-            MoveToDestination(LastSeenPosition);
+            MoveToDestination(_lastSeenPosition);
         }
 
         public void StartChasing()
@@ -95,7 +111,7 @@ namespace Units.Clients.Director.EnemyAI
             _currentActionCoroutine = StartCoroutine(ChaseCoroutine());
         }
         
-        public void StartPatrol()
+        public void StartPatrolling()
         {
             if (_currentWaypoint >= _waypoints.Count - 1)
             {
@@ -109,7 +125,7 @@ namespace Units.Clients.Director.EnemyAI
             MoveToDestination(_waypoints[_currentWaypoint].position);
         }
 
-        public void StartAttack()
+        public void StartAttacking()
         {
             if (_currentActionCoroutine != null)
             {
@@ -134,7 +150,7 @@ namespace Units.Clients.Director.EnemyAI
         {
             while (CheckPlayerState != CheckPlayerState.NotVisible)
             {
-                while ((transform.position - _player.Transform.position).magnitude > (_attackRange * 0.8f))
+                while ((transform.position - _player.Transform.position).magnitude > (_attackRange * _attackDistanceRatio))
                 {
                     // Find a path, if it's not null, run to the player and check if his position changed too
                     // much every couple of seconds.
@@ -256,19 +272,19 @@ namespace Units.Clients.Director.EnemyAI
 
                 if (hitDistance < _attackRange)
                 {
-                    LastSeenPosition = _player.Transform.position;
+                    _lastSeenPosition = _player.Transform.position;
                     return CheckPlayerState.InAttackRange;
                 }
                 
                 if (hitDistance < _playerCloseRange)
                 {
-                    LastSeenPosition = _player.Transform.position;
+                    _lastSeenPosition = _player.Transform.position;
                     return CheckPlayerState.InCloseRange;
                 }
                 
                 if (hitDistance < _playerOuterRange)
                 {
-                    LastSeenPosition = _player.Transform.position;
+                    _lastSeenPosition = _player.Transform.position;
                     return CheckPlayerState.InOuterRange;
                 }
             }

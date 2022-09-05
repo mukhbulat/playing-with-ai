@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="">
+    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="Added SeekState implementation, changed ChaseState to exit into SeekState.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/ChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/ChaseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/SeekState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/SeekState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/AttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/HideState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/HideState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/PatrolState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/PatrolState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +21,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scripts/Units/Clients/Director/EnemyAI/States/AttackState.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -86,7 +90,7 @@
       <workItem from="1661941399248" duration="17110000" />
       <workItem from="1662208892584" duration="417000" />
       <workItem from="1662304449319" duration="766000" />
-      <workItem from="1662380631283" duration="1098000" />
+      <workItem from="1662380631283" duration="4105000" />
     </task>
     <task id="LOCAL-00001" summary="Added IMovable interface and UnitBehaviour. Changed PlayerInputHandler and MovementBehaviour to implement IMovable.">
       <created>1661522578019</created>
@@ -228,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661968188208</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Added SeekState implementation, changed ChaseState to exit into SeekState.">
+      <created>1662382088837</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1662382088837</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +283,7 @@
     <MESSAGE value="Added Projectiles directory with ProjectileBehaviour and ProjectileMovement. Changed enemy AI, changed attack behaviour and state" />
     <MESSAGE value="Added Projectiles directory with ProjectileBehaviour and ProjectileMovement. Changed enemy AI, changed attack behaviour and state. Removed log from chase state" />
     <MESSAGE value="Added seek state" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added seek state" />
+    <MESSAGE value="Added SeekState implementation, changed ChaseState to exit into SeekState." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added SeekState implementation, changed ChaseState to exit into SeekState." />
   </component>
 </project>
