@@ -9,6 +9,9 @@
         public override void Enter()
         {
             base.Enter();
+            
+            IsCurrentActionEnded = false;
+            Enemy.StartPatrolling();
         }
 
         public override void LogicUpdate()
@@ -26,11 +29,6 @@
             base.OnCurrentActionEnded();
             IsCurrentActionEnded = false;
             Enemy.StartPatrolling();
-        }
-
-        public override void Exit()
-        {
-            base.Exit();
         }
     }
 }

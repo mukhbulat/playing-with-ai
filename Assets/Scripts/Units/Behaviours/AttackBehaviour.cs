@@ -23,7 +23,6 @@ namespace Units.Behaviours
         {
             // todo: animation and projectile spawn
             if (!_canAttack) return;
-            Debug.Log("AttackBehaviour StartAttack worked");
             direction = direction.normalized;
             var projectile = Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
             projectile.Spawn(_damage, direction, _isPlayers);
@@ -35,7 +34,6 @@ namespace Units.Behaviours
             _canAttack = false;
             if (_attackSpeed == 0)
             {
-                Debug.Log("Attack speed is 0");
                 _attackSpeed = 1;
             }
             yield return new WaitForSeconds(1 / _attackSpeed);

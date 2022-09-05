@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Units.Controllers
 {
@@ -31,7 +32,7 @@ namespace Units.Controllers
                     return;
                 }
 
-                _currentHealth = MaxHealth;
+                _currentHealth = value;
             }
         }
         public float MaxHealth { get; }

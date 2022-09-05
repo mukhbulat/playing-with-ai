@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="Added SeekState implementation, changed ChaseState to exit into SeekState.">
+    <list default="true" id="6ddebbfd-960b-4df1-a10f-1e18ba2936e2" name="Changes" comment="Changed attack, patrol, seek states = moved some logic to OnCurrentActionEnded. Implemented HideState, changed State and simple enemy AI accordingly">
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerCharacter.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerCharacter.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Simple Enemy.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Simple Enemy.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.In The Moonlight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/AttackBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Behaviours/AttackBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/SimpleEnemyAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/State.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/AttackState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/HideState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/HideState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/PatrolState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Director/EnemyAI/States/PatrolState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Player/PlayerInputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Clients/Player/PlayerInputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/Damageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Controllers/Damageable.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +30,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scripts/Units/Behaviours/AttackBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scripts/Units/Clients/Director/EnemyAI/States/AttackState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://F:/All Stuff/gd/Unity/In The Moonlight/Assets/Scripts/Units/Clients/Director/EnemyAI/States/AttackState.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -90,7 +99,7 @@
       <workItem from="1661941399248" duration="17110000" />
       <workItem from="1662208892584" duration="417000" />
       <workItem from="1662304449319" duration="766000" />
-      <workItem from="1662380631283" duration="4105000" />
+      <workItem from="1662380631283" duration="9896000" />
     </task>
     <task id="LOCAL-00001" summary="Added IMovable interface and UnitBehaviour. Changed PlayerInputHandler and MovementBehaviour to implement IMovable.">
       <created>1661522578019</created>
@@ -239,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662382088837</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Changed attack, patrol, seek states = moved some logic to OnCurrentActionEnded. Implemented HideState, changed State and simple enemy AI accordingly">
+      <created>1662385308220</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1662385308220</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,6 +300,7 @@
     <MESSAGE value="Added Projectiles directory with ProjectileBehaviour and ProjectileMovement. Changed enemy AI, changed attack behaviour and state. Removed log from chase state" />
     <MESSAGE value="Added seek state" />
     <MESSAGE value="Added SeekState implementation, changed ChaseState to exit into SeekState." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added SeekState implementation, changed ChaseState to exit into SeekState." />
+    <MESSAGE value="Changed attack, patrol, seek states = moved some logic to OnCurrentActionEnded. Implemented HideState, changed State and simple enemy AI accordingly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed attack, patrol, seek states = moved some logic to OnCurrentActionEnded. Implemented HideState, changed State and simple enemy AI accordingly" />
   </component>
 </project>

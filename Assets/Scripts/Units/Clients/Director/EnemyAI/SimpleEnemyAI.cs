@@ -90,8 +90,9 @@ namespace Units.Clients.Director.EnemyAI
         public void StartHiding()
         {
             var hidingSpot = (_player.Transform.position - transform.position).normalized;
-            hidingSpot.x = hidingSpot.x > 0 ? 0 : _pathfinding.Grid.Width * _pathfinding.Grid.CellSize;
-            hidingSpot.y = hidingSpot.y > 0 ? 0 : _pathfinding.Grid.Height * _pathfinding.Grid.CellSize;
+            hidingSpot.x = hidingSpot.x > 0 ? 1 : (_pathfinding.Grid.Width - 1) * _pathfinding.Grid.CellSize;
+            hidingSpot.y = hidingSpot.y > 0 ? 1 : (_pathfinding.Grid.Height - 1) * _pathfinding.Grid.CellSize;
+            hidingSpot.z = 0;
             
             MoveToDestination(hidingSpot);
         }

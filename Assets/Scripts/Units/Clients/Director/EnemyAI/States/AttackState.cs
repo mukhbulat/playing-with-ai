@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Units.Clients.Director.EnemyAI.States
+﻿namespace Units.Clients.Director.EnemyAI.States
 {
     public class AttackState : State
     {

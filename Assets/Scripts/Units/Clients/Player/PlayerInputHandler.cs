@@ -10,12 +10,13 @@ namespace Units.Clients.Player
         [SerializeField] private UnitBehaviour _playerCharacter;
         
         private PlayerInput _playerInput;
-        private InputAction _movement;
+        private InputAction _movement, _attack;
 
         private void Awake()
         {
             _playerInput = GetComponent<PlayerInput>();
             _movement = _playerInput.actions["Movement"];
+            _attack = _playerInput.actions["Attack"];
         }
 
         private void Update()
@@ -25,6 +26,12 @@ namespace Units.Clients.Player
             {
                 if (movementInput.magnitude > 1) movementInput.Normalize();
                 _playerCharacter.Movable.Move(movementInput);
+            }
+
+            var attackInput = _attack.ReadValue<Vector2>();
+            if (attackInput != Vector2.zero)
+            {
+                _playerCharacter.Attacking.StartAttack(attackInput);
             }
         }
     }
