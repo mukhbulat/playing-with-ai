@@ -36,16 +36,17 @@ namespace Units.Clients.Director.EnemyAI
         [SerializeField] private float _playerOuterRange = 12f;
         private float _attackRange;
         private int _objectAndPlayerLayerMask = (1 << 7) + (1 << 6);
-        private Vector3 _lastSeenPosition;
+        public Vector3 LastSeenPosition { get; private set; }
 
         // State machine:
         public State Attack => _attack;
         public State Chase => _chase;
         public State Hide => _hide;
         public State Patrol => _patrol;
+        public State Seek => _seek;
         
         private EnemyStateMachine _stateMachine;
-        private State _attack, _chase, _hide, _patrol;
+        private State _attack, _chase, _hide, _patrol, _seek;
 
         private IEnumerator Start()
         {
@@ -68,6 +69,7 @@ namespace Units.Clients.Director.EnemyAI
             _chase = new ChaseState(_stateMachine, this);
             _hide = new HideState(_stateMachine, this);
             _patrol = new PatrolState(_stateMachine, this);
+            _seek = new SeekState(_stateMachine, this);
             
             _stateMachine.Initialize(_patrol);
         }
@@ -76,6 +78,11 @@ namespace Units.Clients.Director.EnemyAI
         {
             CheckPlayerState = CheckPlayer();
             _stateMachine?.CurrentState.LogicUpdate();
+        }
+
+        public void StartSeeking()
+        {
+            MoveToDestination(LastSeenPosition);
         }
 
         public void StartChasing()
@@ -249,19 +256,19 @@ namespace Units.Clients.Director.EnemyAI
 
                 if (hitDistance < _attackRange)
                 {
-                    _lastSeenPosition = _player.Transform.position;
+                    LastSeenPosition = _player.Transform.position;
                     return CheckPlayerState.InAttackRange;
                 }
                 
                 if (hitDistance < _playerCloseRange)
                 {
-                    _lastSeenPosition = _player.Transform.position;
+                    LastSeenPosition = _player.Transform.position;
                     return CheckPlayerState.InCloseRange;
                 }
                 
                 if (hitDistance < _playerOuterRange)
                 {
-                    _lastSeenPosition = _player.Transform.position;
+                    LastSeenPosition = _player.Transform.position;
                     return CheckPlayerState.InOuterRange;
                 }
             }

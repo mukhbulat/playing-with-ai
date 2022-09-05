@@ -14,7 +14,6 @@ namespace Units.Clients.Director.EnemyAI.States
             
             if (Enemy.CheckPlayerState != CheckPlayerState.InAttackRange)
             {
-                Debug.Log("Player is not in attack range, changing to chase");
                 StateMachine.ChangeState(Enemy.Chase);
             }
             

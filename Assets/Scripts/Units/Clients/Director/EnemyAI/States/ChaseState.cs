@@ -20,8 +20,7 @@ namespace Units.Clients.Director.EnemyAI.States
 
             if (Enemy.CheckPlayerState == CheckPlayerState.NotVisible)
             {
-                StateMachine.ChangeState(Enemy.Patrol);
-                Debug.Log("chase -> patrol");
+                StateMachine.ChangeState(Enemy.Seek);
             }
 
             if (Enemy.CheckPlayerState == CheckPlayerState.InAttackRange)
