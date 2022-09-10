@@ -19,7 +19,7 @@ namespace Grid.Behaviours
             yield return null;
             yield return null;
 
-            _pathfinding = FindObjectOfType<GeneralPathfindingGrid>().Pathfinding;
+            _pathfinding = GeneralPathfindingGrid.Pathfinding;
 
             _sprites = new List<GameObject>();
             

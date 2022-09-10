@@ -6,7 +6,7 @@ namespace Grid.Behaviours
 {
     public class GeneralPathfindingGrid : MonoBehaviour
     {
-        public Pathfinding Pathfinding { get; private set; }
+        public static Pathfinding Pathfinding { get; private set; }
 
         [SerializeField] private int _cellsHorizontal = 50;
         [SerializeField] private int _cellsVertical = 50;

@@ -18,7 +18,7 @@ namespace Grid.Behaviours
             yield return null;
 
             _collider = GetComponent<BoxCollider2D>();
-            _pathfinding = FindObjectOfType<GeneralPathfindingGrid>().Pathfinding;
+            _pathfinding = GeneralPathfindingGrid.Pathfinding;
             
             ChangeWalkable();
         }

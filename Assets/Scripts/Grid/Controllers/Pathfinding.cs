@@ -24,6 +24,7 @@ namespace Grid.Controllers
         private List<PathNode> _openList;
         private HashSet<PathNode> _closedList;
 
+        /*
         public List<PathNode> FindPath(PathNode startNode, PathNode endNode)
         {
             if (endNode == null || startNode == null)
@@ -100,17 +101,15 @@ namespace Grid.Controllers
             PathNode endNode = _grid.GetValue(endX, endY);
 
             return FindPath(startNode, endNode);
-            
-            // Moved it to other FindPath.
-            /*
-            if (startNode == null)
+        }
+        */
+        
+        public bool FindPath(PathNode startNode, PathNode endNode, ref Stack<PathNode> calculatedPath)
+        {
+            if (endNode == null || startNode == null)
             {
-                throw new Exception("Start node is null");
-            }
-
-            if (endNode == null)
-            {
-                throw new Exception("End node is null");
+                Debug.Log("End node or start node are null");
+                return false;
             }
             
             _openList = new List<PathNode>() { startNode };
@@ -137,7 +136,8 @@ namespace Grid.Controllers
                 PathNode currentNode = GetLowestFCostNode(_openList);
                 if (currentNode == endNode)
                 {
-                    return CalculatePathNode(endNode);
+                    CalculatePath(endNode, ref calculatedPath);
+                    return true;
                 }
 
                 _openList.Remove(currentNode);
@@ -172,9 +172,7 @@ namespace Grid.Controllers
                 }
             }
 
-            return null;
-            */
-
+            return false;
         }
 
         private HashSet<PathNode> GetNeighbourNodes(PathNode currentNode)
@@ -229,6 +227,18 @@ namespace Grid.Controllers
 
             path.Reverse();
             return path;
+        }
+
+        private void CalculatePath(PathNode endNode, ref Stack<PathNode> calculatedPath)
+        {
+            calculatedPath.Clear();
+            calculatedPath.Push(endNode);
+            PathNode currentNode = endNode;
+            while (currentNode.PreviousNode != null)
+            {
+                calculatedPath.Push(currentNode.PreviousNode);
+            }
+            
         }
 
         private int CalculateDistanceCost(PathNode startNode, PathNode endNode)

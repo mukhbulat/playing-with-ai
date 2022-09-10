@@ -5,7 +5,7 @@
         public PathNode PreviousNode { get; set; }
 
         private GridData<PathNode> _grid;
-        public int HorizontalPosition { get; private set; } 
+        public int HorizontalPosition { get; private set; }
         public int VerticalPosition { get; private set; }
 
         public int GCost { get; set; }
